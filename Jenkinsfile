@@ -1,31 +1,25 @@
-pipeline{
-
+pipeline {
     agent any
 
-        stages{
+    stages {
 
-            stage('welcome'){
-                steps{
-                    echo "pipeline started Successfully"
-                }
-        
+        stage('Welcome') {
+            steps {
+                echo 'Pipeline started successfully'
             }
-        
-         stage('show files'){
-                steps{
-                    sh 'ls'
-                    sh 'cat hellow.txt'
-                }
-            }
+        }
 
-            
-         stage('finished'){
-                steps{
-                    
-                    echo "pipeline finished"
-                }
+        stage('Show Files') {
+            steps {
+                sh 'ls'
+                sh 'cat hello.txt'
             }
+        }
 
+        stage('Finish') {
+            steps {
+                echo 'Pipeline finished'
+            }
         }
     }
-
+}
